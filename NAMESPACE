@@ -1,0 +1,22 @@
+export(
+    "rcnorm", "dcmvnorm", "isHermitian", "ishpd", "rcmvnorm",
+    "zapim", "Im<-", "Re<-", "complex_CF", "corr_complex",
+    "interpolant.quick.complex", "scales.likelihood.complex", "sd", "var"
+)
+
+
+importFrom(elliptic, sigma)
+importFrom(emulator,
+           cprod,
+           quad.form, quad.form.inv, quad.tform, quad.tdiag,
+           regressor.basis, regressor.multi,
+           betahat.fun, sigmahatsquared
+           )
+
+importFrom("stats","rnorm")
+
+
+S3method(sd,complex)
+S3method(sd,default)
+S3method(var,complex)
+S3method(var,default)
