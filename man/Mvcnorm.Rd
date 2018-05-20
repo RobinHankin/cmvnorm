@@ -18,26 +18,22 @@ rcmvnorm(n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
     tol= 100 * .Machine$double.eps)
 }
 \arguments{
-  \item{z}{
-    Vector or matrix of quantiles.  If \code{x} is a matrix, each
-    row is taken to be a quantile
-}
-\item{n}{Number of observations}
-\item{mean}{Mean vector}
-\item{sigma}{Covariance matrix, Hermitian positive-definite}
-\item{tol}{numerical tolerance term for verifying positive definiteness}
-\item{log}{In \code{dcmvnorm()}, Boolean with default \code{TRUE}
-  meaning to return the Gaussian density function, and \code{FALSE}
-  meaning to return the logarithm}
-}
-\item{method}{
-  Matrix decomposition used to determine the matrix root of
-  \code{sigma}, possible methods are eigenvalue decomposition
-  (\code{"eigen"}, default), and singular value decomposition
-}
+  \item{z}{Complex vector or matrix of quantiles.  If a matrix, each row
+    is taken to be a quantile}
+  \item{n}{Number of observations}
+  \item{mean}{Mean vector}
+  \item{sigma}{Covariance matrix, Hermitian positive-definite}
+  \item{tol}{numerical tolerance term for verifying positive definiteness}
+  \item{log}{In \code{dcmvnorm()}, Boolean with default \code{TRUE}
+    meaning to return the Gaussian density function, and \code{FALSE}
+    meaning to return the logarithm}
+  \item{method}{
+    Matrix decomposition used to determine the positive-definite matrix
+    square root of \code{sigma}, possible methods are eigenvalue
+    decomposition (\dQuote{\code{eigen}}, default), and singular value
+    decomposition (\dQuote{\code{svd}})}
 }
 \details{
-
   Function \code{dcmvnorm()} is the density function of the complex
   multivariate normal (Gaussian) distribution:
 
