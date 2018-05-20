@@ -1,7 +1,7 @@
 Package: cmvnorm
 Type: Package
 Title: The Complex Multivariate Gaussian Distribution
-Version: 1.0-4
+Version: 1.0-5
 Date: 2018-05-22
 Author: Robin K. S. Hankin
 Depends: emulator (>= 1.2-15)
