@@ -3,9 +3,7 @@
 \alias{complex_CF}
 \alias{interpolant.quick.complex}
 \alias{scales.likelihood.complex}
-\title{
-Various utilities for complex emulation
-}
+\title{Complex Gaussian processes}
 \description{
 Various utilities for investigating complex Gaussian processes
 }
