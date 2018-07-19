@@ -63,6 +63,8 @@ function (n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
           method = c("svd", "eigen", "chol"),
           tol= 100 * .Machine$double.eps){
 
+  if(missing(mean) & missing(sigma)){stop("neither mean nor sigma supplied")}
+
   stopifnot(ishpd(sigma, tol)) # thus sigma known to be HPD
                                         
   if (length(mean) != nrow(sigma)) {
