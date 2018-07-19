@@ -50,7 +50,7 @@ function(x, tol= 100 * .Machine$double.eps){
 }
 
 "ishpd" <-
-function(x,tol= 100 * .Machine$double.eps){ # "iphd" == Is Hermitian Positive Definite
+function(x,tol= 100 * .Machine$double.eps){ # "ishpd" == Is Hermitian Positive Definite
   if(isHermitian(x) && all(zapim(svd(x)$d)>0)){
     return(TRUE)
   } else {
