@@ -18,8 +18,7 @@ Generalizing the real multivariate Gaussian distribution to the complex
 case is not straightforward but one common approach is to replace the
 real symmetric variance matrix with a Hermitian positive-definite
 matrix.  The \pkg{cmvnorm} package provides some functionality for
-resulting density function.
-
+the resulting density function.
 }
 
 \author{
