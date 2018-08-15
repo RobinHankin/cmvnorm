@@ -50,7 +50,7 @@ function(x, tol= 100 * .Machine$double.eps){
 }
 
 "ishpd" <-
-function(x,tol= 100 * .Machine$double.eps){ # "iphd" == Is Hermitian Positive Definite
+function(x,tol= 100 * .Machine$double.eps){ # "ishpd" == Is Hermitian Positive Definite
   if(isHermitian(x) && all(zapim(svd(x)$d)>0)){
     return(TRUE)
   } else {
@@ -62,6 +62,8 @@ function(x,tol= 100 * .Machine$double.eps){ # "iphd" == Is Hermitian Positive De
 function (n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)), 
           method = c("svd", "eigen", "chol"),
           tol= 100 * .Machine$double.eps){
+
+  if(missing(mean) & missing(sigma)){stop("neither mean nor sigma supplied")}
 
   stopifnot(ishpd(sigma, tol)) # thus sigma known to be HPD
                                         
