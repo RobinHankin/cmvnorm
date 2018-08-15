@@ -11,4 +11,4 @@ Description: Various utilities for the complex multivariate Gaussian distributio
 VignetteBuilder: elliptic, emulator
 License: GPL-2
 URL: https://github.com/RobinHankin/cmvnorm.git
-BugReports: https://github.com/RobinHankin/mcmvnorm/issues
+BugReports: https://github.com/RobinHankin/cmvnorm/issues
