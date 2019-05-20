@@ -55,7 +55,7 @@ interpolant.quick.complex(x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL
   
   This function includes only a single method, that of nested calls to
   \code{apply()}.  I could not figure out how to generalize method 1 of
-  \code{corr.mattrix()}  to the complex case.
+  \code{corr.matrix()}  to the complex case.
 
 \item Function \code{scales.likelihood.complex()} is a complex version of
 \code{scales.likelihood()} which takes a positive definite matrix and a
