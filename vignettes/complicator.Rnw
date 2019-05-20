@@ -20,11 +20,15 @@
 
 %% an abstract and keywords
 \Abstract{Here I introduce \pkg{cmvnorm}, a complex generalization of
-  the \pkg{mvtnorm} package.  A complex
-  generalization of the Gaussian process is suggested and numerical
-  results presented using the package.  An application in the context
-  of approximating the Weierstrass sigma function using a complex
-  Gaussian process is given.}
+  the \pkg{mvtnorm} package.  A complex generalization of the Gaussian
+  process is suggested and numerical results presented using the
+  package.  An application in the context of approximating the
+  Weierstrass sigma function using a complex Gaussian process is
+  given.  An earlier version of this vignette appeared as
+  \cite{hankin2015}, and the package is maintained at
+  \url{http://github.com/RobinHankin/cmvnorm}.
+
+}
 
 
 \Keywords{Complex multivariate Gaussian distribution, Gaussian
