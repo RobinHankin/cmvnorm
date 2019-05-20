@@ -55,22 +55,23 @@ interpolant.quick.complex(x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL
   
   This function includes only a single method, that of nested calls to
   \code{apply()}.  I could not figure out how to generalize method 1 of
-  \code{corr.matrix()}  to the complex case.
+  \code{corr.matrix()} to the complex case.
 
-\item Function \code{scales.likelihood.complex()} is a complex version of
-\code{scales.likelihood()} which takes a positive definite matrix and a
-mean.  The formula used is \deqn{(\sigma^2)^{-(n-q)}|A|^{-1}
-|H^\ast A^{-1}H|^{-1}}{[omitted, see PDF]}.  Here and elsewhere,
-\eqn{A^\ast}{A^*} means the complex conjugate of the transpose.
+  \item Function \code{scales.likelihood.complex()} is a complex version
+  of \code{scales.likelihood()} which takes a positive definite matrix
+  and a mean.  The formula used is \deqn{(\sigma^2)^{-(n-q)}|A|^{-1}
+  |H^\ast A^{-1}H|^{-1}}{[omitted, see PDF]}.  Here and elsewhere,
+  \eqn{A^\ast}{A^*} means the complex conjugate of the transpose.
 
-\item Function \code{interpolant.quick.complex()} is a complex version of
-\code{interpolant.quick()}.
+  \item Function \code{interpolant.quick.complex()} is a complex version of
+  \code{interpolant.quick()}.
 
-\deqn{\mathbf{h}(\mathbf{x})^\ast\hat{\mathbf{\beta}} +
-  \mathbf{t}(\mathbf{x})^\ast A^{-1}(\mathbf{y}-H\hat{\mathbf{\beta}})}{[omitted, see PDF]} 
+  \deqn{\mathbf{h}(\mathbf{x})^\ast\hat{\mathbf{\beta}} +
+    \mathbf{t}(\mathbf{x})^\ast
+    A^{-1}(\mathbf{y}-H\hat{\mathbf{\beta}})}{[omitted, see PDF]}
 
-This is the complex version of Oakley's equation 2.30 or Hankin's
-equation 5.
+  This is the complex version of Oakley's equation 2.30 or Hankin's
+  equation 5.
 
 }
 
