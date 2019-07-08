@@ -22,9 +22,10 @@ Tolerance for numerical scruff
 }
 }
 \details{
-Functions \code{isHermitian()} and \code{ishpd()} return a Boolean.
-Function \code{zapim()} zaps small imaginary parts of components vector,
-returning real if all elements are so zapped.
+Functions \code{isHermitian()} and \code{ishpd()} return a Boolean,
+  indicating whether the argument is Hermitian or Hermitian positive definite
+  respectively. Function \code{zapim()} zaps small imaginary parts of a
+  vector, returning real if all elements are so zapped.
 }
 \author{
 Robin K. S. Hankin
