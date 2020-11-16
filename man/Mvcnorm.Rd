@@ -50,9 +50,7 @@ N. R. Goodman 1963.  \dQuote{Statistical analysis based on a certain
   multivariate complex Gaussian distribution}.  \emph{The Annals of
   Mathematical Statistics}.  34(1): 152--177
 }
-\author{
-  Robin K. S. Hankin
-}
+\author{Robin K. S. Hankin}
 \examples{
 
 S <- emulator::cprod(rcmvnorm(3,mean=c(1,1i),sigma=diag(2)))
