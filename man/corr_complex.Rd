@@ -23,7 +23,7 @@ interpolant.quick.complex(x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL
     between two points in \eqn{C^n} }
   \item{means, pos.def.matrix, scales}{In function \code{complex_CF()}, the mean
     and covariance matrix of the distribution whose characteristic
-    function is used as to give the covariance matrix; \code{scales} is
+    function is used to give the covariance matrix; \code{scales} is
     used to specify the diagonal of \code{pos.def.matrix} if the
     off-diagonal elements are zero}
   \item{zold, d, give_log, func, x, Ainv, give.Z,...}{Direct analogues of the
@@ -63,8 +63,8 @@ interpolant.quick.complex(x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL
   |H^\ast A^{-1}H|^{-1}}{[omitted, see PDF]}.  Here and elsewhere,
   \eqn{A^\ast}{A^*} means the complex conjugate of the transpose.
 
-  \item Function \code{interpolant.quick.complex()} is a complex version of
-  \code{interpolant.quick()}.
+  \item Function \code{interpolant.quick.complex()} is a complex version
+  of \code{interpolant.quick()}.
 
   \deqn{\mathbf{h}(\mathbf{x})^\ast\hat{\mathbf{\beta}} +
     \mathbf{t}(\mathbf{x})^\ast
@@ -90,10 +90,7 @@ More details are given in the package vignette.
   }
 }
 
-
-\author{
-Robin K. S. Hankin
-}
+\author{Robin K. S. Hankin}
 
 \examples{
 

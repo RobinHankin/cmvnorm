@@ -14,22 +14,16 @@ ishpd(x,tol= 100 * .Machine$double.eps)
 zapim(x,tol= 100 * .Machine$double.eps)
 }
 \arguments{
-  \item{x}{
-A square matrix
-}
-\item{tol}{
-Tolerance for numerical scruff
-}
+  \item{x}{A square matrix}
+  \item{tol}{Tolerance for numerical scruff}
 }
 \details{
 Functions \code{isHermitian()} and \code{ishpd()} return a Boolean,
-  indicating whether the argument is Hermitian or Hermitian positive definite
-  respectively. Function \code{zapim()} zaps small imaginary parts of a
-  vector, returning real if all elements are so zapped.
+indicating whether the argument is Hermitian or Hermitian positive
+definite respectively.  Function \code{zapim()} zaps small imaginary
+parts of a vector, returning real if all elements are so zapped.
 }
-\author{
-Robin K. S. Hankin
-}
+\author{Robin K. S. Hankin}
 \examples{
 v <- 2^(1:30)
 zapim(v+1i*exp(-v))

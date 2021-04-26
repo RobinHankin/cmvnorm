@@ -27,11 +27,10 @@ rcmvnorm(n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
   \item{log}{In \code{dcmvnorm()}, Boolean with default \code{FALSE}
     meaning to return the Gaussian density function, and \code{TRUE}
     meaning to return the logarithm}
-  \item{method}{
-    Matrix decomposition used to determine the positive-definite matrix
-    square root of \code{sigma}, possible methods are eigenvalue
-    decomposition (\dQuote{\code{eigen}}, default), and singular value
-    decomposition (\dQuote{\code{svd}})}
+  \item{method}{Specifies the decomposition used to determine the
+    positive-definite matrix square root of \code{sigma}.  Possible
+    methods are eigenvalue decomposition (\dQuote{\code{eigen}},
+    default), and singular value decomposition (\dQuote{\code{svd}})}
 }
 \details{
   Function \code{dcmvnorm()} is the density function of the complex
@@ -40,7 +39,6 @@ rcmvnorm(n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
   \deqn{p\left(\mathbf{z}\right)=\frac{\exp\left(-\mathbf{z}^*\Gamma\mathbf{z}\right)}{\left|\pi\Gamma\right|}}{
     p(z)=exp(-z*\Gamma z)/|\pi\Gamma|}
     
-  
   Function \code{rcnorm()} is a low-level function designed to generate
   observations drawn from a standard complex Gaussian.  Function
   \code{rcmvnorm()} is a user-friendly wrapper for this.

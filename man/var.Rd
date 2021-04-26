@@ -39,9 +39,7 @@ with \code{stats::var()} (for the record, I disagree with the rationale
 for \eqn{n-1}).
 
 }
-\author{
-Robin K. S. Hankin
-}
+\author{Robin K. S. Hankin}
 \examples{
 
 sd(rcnorm(10)) # imaginary component suppressed by zapim()
