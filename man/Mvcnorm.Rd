@@ -24,8 +24,8 @@ rcmvnorm(n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
   \item{mean}{Mean vector}
   \item{sigma}{Covariance matrix, Hermitian positive-definite}
   \item{tol}{numerical tolerance term for verifying positive definiteness}
-  \item{log}{In \code{dcmvnorm()}, Boolean with default \code{TRUE}
-    meaning to return the Gaussian density function, and \code{FALSE}
+  \item{log}{In \code{dcmvnorm()}, Boolean with default \code{FALSE}
+    meaning to return the Gaussian density function, and \code{TRUE}
     meaning to return the logarithm}
   \item{method}{
     Matrix decomposition used to determine the positive-definite matrix
