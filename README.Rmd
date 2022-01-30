@@ -1,0 +1,147 @@
+---
+title: "The complex multivariate Gaussian distribution in R"
+output:
+  github_document:
+    pandoc_args: --webtex
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# <img src="man/figures/cmvnorm.png" width = "150" align="right" />
+
+
+# Overview
+
+```{r, message=FALSE}
+# install.packages("mvp")  # uncomment this to install the package
+library("cmvnorm")
+```
+
+
+Consider the (zero mean) multivariate Gaussian distribution
+
+$$
+f\left({\mathbf x};\Sigma\right) =
+\frac{
+  \exp\left(-\frac{1}{2}{\mathbf x}^T\Sigma^{-1}{\mathbf x}\right)
+}{
+  \sqrt{\left|2\pi\Sigma\right|}
+}
+\qquad{\mathbf x}\in{\mathbb R}^n
+$$
+
+where $\Sigma$ is an $n\times n$ positive-definite variance matrix.
+Now compare the complex version with $\Gamma$ Hermitian
+positive-definite:
+
+$$
+f\left({\mathbf z};\Gamma\right) =
+\frac{
+  \exp\left( -{\mathbf z}^\dag\Gamma^{-1}{\mathbf z}\right)
+}{
+ \left|\pi\Gamma\right|
+}
+\qquad{\mathbf z}\in\mathbb{C}^n
+$$
+
+
+See how much nicer the complex version is!  No awkward, unsightly
+factors of two and no inconvenient square roots.  This is essentially
+due to Gauss's integral operating more cleanly over the complex plane
+than the real line:
+
+\[
+{
+\int_\mathbb{C}e^{-z^\dag z}\,dz=
+\iint_{(x,y)\in\mathbb{R}^2}\!\!\!\!\!\!\!\!\!\!\!\!\!\!
+e^{-(x^2+y^2)}\,dx\,dy=
+\int_{\theta=0}^{2\pi}\int_{r=0}^\infty e^{-r^2}r\,dr\,d\theta=
+2\pi\int_{r=0}^\infty e^{-r^2}r\,dr=\pi.
+}
+\]
+
+It can be shown that ${\mathbb E}({\mathbf z}{\mathbf
+z}^\dag)=\Gamma$, so $\Gamma$ really is the variance of the
+distribution.  We can also introduce a nonzero mean, ${\mathbf
+m}\in{\mathbb C}^n$ in the natural way.
+
+The `cmvnorm` package furnishes some R functionality for dealing with
+the complex multivariate Gaussian distribution.
+
+# The package in use
+
+The simplest case would be the univariate standard normal
+distribution, that is is a complex random variable $z$ with PDF
+$\exp(z^*z)/\pi$.  Random samples are given by `rcnorm()`:
+
+
+```{r}
+rcnorm(10)
+```
+
+Observations are circularly symmetric in the sense that $z$ has the
+same distribution as $e^{i\theta}z$ for any $\theta\in{\mathbb R}$, as
+we may verify visually:
+
+```{r}
+par(pty="s")
+plot(rcnorm(10000),asp=1,xlim=c(-3,3),ylim=c(-3,3),pch=16,cex=0.2)
+```
+
+We may sample from this distribution and verify that it has zero mean
+and unit variance:
+
+```{r}
+z <- rcnorm(1e6)
+mean(z)   # zero, subject to sample error
+var(z)    # one, subject to sample error
+```
+
+Note that the real and imaginary components of $z$ have variance
+$0.5$:
+
+```{r}
+z <- rcnorm(1e6)
+
+var(Re(z))
+var(Im(z))
+```
+
+We may sample from the multivariate case similarly. Suppose
+${\mathbf m}=(1,i)^T$ and
+$\Gamma=\left(\begin{array}{cc}3&i\\-i&2\end{array}\right)$:
+
+
+```{r}
+tm <- c(1,1i)  # true mean
+tS <- matrix(c(3,1i,-1i,2),2,2)  # true variance
+rcmvnorm(10,mean=tm, sigma=tS)
+```
+
+We may perform elementary inference.  For the mean, we would calculate the 
+
+```{r}
+n <- 1e6  # sample size
+z <- rcmvnorm(n,mean=tm, sigma=tS)
+colMeans(z)   # should be close to tm=[1,i]
+z <- scale(z,scale=FALSE) # sweep out the mean
+cprod(z)/n  # should be close to tS
+```
+
+# Further information
+
+For further information, see the package vignette: type
+
+`vignette("cmvnorm")`
+
+at the R command line.
+
