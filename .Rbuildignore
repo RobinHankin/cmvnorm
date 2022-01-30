@@ -6,6 +6,7 @@
 .Rbuildignore
 
 inst/cmvnorm.png
+inst/cmvnorm.svg
 inst/cmvnorm.png.pdf
 inst/cmvnorm1.png
 inst/cmvnorm_icon
