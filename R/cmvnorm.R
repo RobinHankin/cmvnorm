@@ -272,3 +272,8 @@ var.default <- stats::var
        return(drop(zapim(cprod(x,y))/(nrow(x)-1)))
     }
 }
+
+`rcwis` <- function(n,S){
+    if(length(S)==1){S <- diag(nrow=S)}
+    cprod(rcmvnorm(n,sigma=S))
+} 

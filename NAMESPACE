@@ -1,7 +1,7 @@
 export(
     "rcnorm", "dcmvnorm", "isHermitian", "ishpd", "rcmvnorm",
     "zapim", "Im<-", "Re<-", "complex_CF", "corr_complex",
-    "interpolant.quick.complex", "scales.likelihood.complex", "sd", "var"
+    "interpolant.quick.complex", "scales.likelihood.complex", "sd", "var","rcwis"
 )
 
 
