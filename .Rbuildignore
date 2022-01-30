@@ -4,3 +4,12 @@
 ^\.travis.yml$
 .gitignore
 .Rbuildignore
+
+inst/cmvnorm.png
+inst/cmvnorm.png.pdf
+inst/cmvnorm1.png
+inst/cmvnorm_icon
+inst/cmvnorm_icon.pdf
+inst/cmvnorm_icon.png
+inst/cmvnorm_icon.png.pdf
+inst/cmvnorm_stickermaker.R
