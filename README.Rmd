@@ -127,7 +127,8 @@ tS <- matrix(c(3,1i,-1i,2),2,2)  # true variance
 rcmvnorm(10,mean=tm, sigma=tS)
 ```
 
-We may perform elementary inference.  For the mean, we would calculate the 
+We may perform elementary inference.  For the mean and variance we can
+calculate their maximum likelihood estimates:
 
 ```{r}
 n <- 1e6  # sample size
