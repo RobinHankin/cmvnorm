@@ -24,10 +24,8 @@
   process is suggested and numerical results presented using the
   package.  An application in the context of approximating the
   Weierstrass sigma function using a complex Gaussian process is
-  given.  An earlier version of this vignette appeared as
-  \cite{hankin2015}, and the package is maintained at
-  \url{http://github.com/RobinHankin/cmvnorm}.
-
+  given.  To cite the package in publications, please use
+  \cite{hankin2015}.
 }
 
 
