@@ -47,7 +47,6 @@
 \Address{
   Robin K. S. Hankin\\
   Auckland University of Technology\\
-  2-14 Wakefield Street\\
   Auckland NZ\\
   \email{hankin.robin@gmail.com}\hfill\includegraphics[width=1in]{\Sexpr{system.file("help/figures/cmvnorm.png",package="cmvnorm")}}
 }
@@ -302,10 +301,10 @@ and establishing that it is real and non-negative:
    \sum_{i,j}\overline{\bw_i}\phi\left(\bz_i-\bz_j\right)\bw_j&\mbox{\small
    covariance function is the CF of~$\Psi$}\\
 &=
-   \sum_{i,j}\overline{\bw_i}\left[\int_{\bt\in\mathbb{C}^n}e^{\mathi\operatorname{Re}\herm{\bt}(\bz_i-\bz_j)}f\left(\bt\right)\,d\bt\right]{\bw_j}\qquad&\mbox{\small
+   \sum_{i,j}\overline{\bw_i}\left[\int_{\bt\in\mathbb{C}^n}e^{\mathi\operatorname{Re}\herm{\bt}(\bz_i-\bz_j)}f{\left(\bt\right)}\,d\bt\right]{\bw_j}\qquad&\mbox{\small
      definition of CF of~$\Psi$}\\
 &=
-   \int_{\bt\in\mathbb{C}^n}\left[\sum_{i,j}\overline{\bw_i}e^{\mathi\operatorname{Re}\herm{\bt}(\bz_i-\bz_j)}{\bw_j}f\left(\bt\right)\right]\,d\bt
+   \int_{\bt\in\mathbb{C}^n}\left[\sum_{i,j}\overline{\bw_i}e^{\mathi\operatorname{Re}\herm{\bt}(\bz_i-\bz_j)}{\bw_j}f{\left(\bt\right)}\right]\,d\bt
    & \mbox{\small integration and summation commute}\\
 &=
    \int_{\bt\in\mathbb{C}^n}\left[\sum_{i,j}\overline{\bw_i}e^{\mathi\operatorname{Re}(\herm{\bt}\bz_i)}\overline{\overline{\bw_j}e^{\mathi\operatorname{Re}(\herm{\bt}\bz_j)}}f{\left(\bt\right)}\right]\,d\bt&\mbox{\small
@@ -331,8 +330,8 @@ equation~(\ref{complex_Gaussian_PDF}) which has characteristic
 function
 
 \begin{equation}\label{complex_gaussian_CF}
-\exp\left(i\operatorname{Re}\left(\herm{\bt}\bm\right) -
-\frac{1}{4}\herm{\bt}\Gamma\bt\right)
+\exp{\left(i\operatorname{Re}\left(\herm{\bt}\bm\right) -
+\frac{1}{4}\herm{\bt}\Gamma\bt\right)}
 \end{equation}
 
 and following~\cite{hankin2012} in writing~$\mathfrak{B}=\Gamma/4$, we
@@ -340,8 +339,8 @@ can write the variance matrix as a product of a (real)
 scalar~$\sigma^2$ term and
 
 \begin{equation}\label{ct}
-c{\left(\bt\right)} = \exp\left(i\operatorname{Re}\left(\herm{\bt}\bm\right) -
-\herm{\bt}\mathfrak{B}\bt\right).
+c{\left(\bt\right)} = \exp{\left(i\operatorname{Re}\left(\herm{\bt}\bm\right) -
+\herm{\bt}\mathfrak{B}\bt\right)}.
 \end{equation}
 
 Thus the covariance matrix~$\Omega$ is given by
@@ -350,8 +349,6 @@ Thus the covariance matrix~$\Omega$ is given by
   \Omega_{ij}=\COV{\left(\eta{\left(\bz_i\right)},\eta{\left(\bz_j\right)}\right)}=
   \sigma^2c\left(\bz_i-\bz_j\right).
   \end{equation}
-  
-
 
 In~(\ref{ct}), $\mathfrak{B}$ has the same meaning as in
 conventional emulator techniques and controls the modulus of the
@@ -499,7 +496,7 @@ head(valsigma)
 @
 
 (an offset is needed
-because~$\sigma{\left(z,g_1,g_2\right)}=z+\operatorname{\mathcal{O}}\left(z^5\right)$).
+because~$\sigma{\left(z,g_1,g_2\right)}=z+\operatorname{\mathcal{O}}{\left(z^5\right)}$).
 The~$\sigma$-function can now be evaluated at the points on the design
 matrix:
 
@@ -602,7 +599,7 @@ has been generalized to the complex case, and a complex generalization
 of the emulator technique has been applied to an analytic function of
 several complex variables.  The complex variance matrix was specified
 using a novel parameterization which accommodated non-real covariances
-in the context of circulary symmetric random variables.  Further work
+in the context of circularly symmetric random variables.  Further work
 might include numerical support for the complex multivariate Student
 $t$~distribution.
 

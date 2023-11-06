@@ -30,7 +30,7 @@ library("cmvnorm")
 Consider the (zero mean) multivariate Gaussian distribution
 
 $$
-f\left({\mathbf x};\Sigma\right) =
+f{\left({\mathbf x};\Sigma\right)} =
 \frac{
   \exp\left(-\frac{1}{2}{\mathbf x}^T\Sigma^{-1}{\mathbf x}\right)
 }{
@@ -44,7 +44,7 @@ Now compare the complex version with $\Gamma$ Hermitian
 positive-definite:
 
 $$
-f\left({\mathbf z};\Gamma\right) =
+f{\left({\mathbf z};\Gamma\right)} =
 \frac{
   \exp\left( -{\mathbf z}^\dag\Gamma^{-1}{\mathbf z}\right)
 }{
