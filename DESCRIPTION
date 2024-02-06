@@ -5,6 +5,7 @@ Version: 1.0-8
 Authors@R: person(given=c("Robin", "K. S."), family="Hankin", role = c("aut","cre"), email="hankin.robin@gmail.com", comment = c(ORCID = "0000-0001-5982-0415"))
 Depends: emulator (>= 1.2-21)
 Suggests: knitr
+Enhances: mvtnorm
 Imports: elliptic
 Maintainer: Robin K. S. Hankin <hankin.robin@gmail.com>
 Description: Various utilities for the complex multivariate Gaussian distribution and complex Gaussian processes.
