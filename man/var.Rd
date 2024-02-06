@@ -28,7 +28,7 @@ Intended to be broadly compatible with \code{stats::sd()} and
 
 If given real values, \code{var()} and \code{sd()} return the variance
 and standard deviation as per ordinary real analysis.  If given complex
-values, returns the complex generalization in which Hermitian transposes
+values, return the complex generalization in which Hermitian transposes
 are used.
 
 If \code{z} is a complex matrix, \code{var(z)} returns the variance of
