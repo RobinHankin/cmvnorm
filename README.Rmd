@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 
 ```{r, include=FALSE, message=FALSE}
 library("cmvnorm")
+set.seed(0)
 ```
 
 To cite the `cmvnorm` package in publications please use Hankin
