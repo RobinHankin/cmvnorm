@@ -5,12 +5,14 @@ export(
 )
 
 
-importFrom(elliptic, sigma)
-importFrom(emulator,
-           cprod,
-           quad.form, quad.form.inv, quad.tform, quad.tdiag,
-           regressor.basis, regressor.multi,
-           betahat.fun, sigmahatsquared
+importFrom("elliptic", "sigma")
+importFrom("quadform",
+           "cprod",
+           "quad.form", "quad.form.inv", "quad.tform", "quad.tdiag")
+
+importFrom("emulator",
+           "regressor.basis", "regressor.multi",
+           "betahat.fun", "sigmahatsquared"
            )
 
 importFrom("stats","rnorm")

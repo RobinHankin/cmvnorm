@@ -51,7 +51,7 @@ N. R. Goodman 1963.  \dQuote{Statistical analysis based on a certain
 \author{Robin K. S. Hankin}
 \examples{
 
-S <- emulator::cprod(rcmvnorm(3,mean=c(1,1i),sigma=diag(2)))
+S <- quadform::cprod(rcmvnorm(3,mean=c(1,1i),sigma=diag(2)))
 
 rcmvnorm(10,sigma=S)
 rcmvnorm(10,mean=c(0,1+10i),sigma=S)
