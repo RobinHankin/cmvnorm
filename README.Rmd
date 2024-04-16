@@ -19,15 +19,13 @@ knitr::opts_chunk$set(
 # <img src="man/figures/cmvnorm.png" width = "150" align="right" />
 
 
-# Overview
-
-```{r, message=FALSE}
-# install.packages("mvp")  # uncomment this to install the package
+```{r, include=FALSE, message=FALSE}
 library("cmvnorm")
 ```
 
-
-Consider the (zero mean) multivariate Gaussian distribution
+To cite the `cmvnorm` package in publications please use Hankin
+(2015).  Consider the (zero mean) multivariate Gaussian distribution
+with probability density function
 
 $$
 f{\left({\mathbf x};\Sigma\right)} =
@@ -35,7 +33,7 @@ f{\left({\mathbf x};\Sigma\right)} =
   \exp\left(-\frac{1}{2}{\mathbf x}^T\Sigma^{-1}{\mathbf x}\right)
 }{
   \sqrt{\left|2\pi\Sigma\right|}
-}
+},
 \qquad{\mathbf x}\in{\mathbb R}^n
 $$
 
@@ -49,8 +47,8 @@ f{\left({\mathbf z};\Gamma\right)} =
   \exp\left( -{\mathbf z}^\dag\Gamma^{-1}{\mathbf z}\right)
 }{
  \left|\pi\Gamma\right|
-}
-\qquad{\mathbf z}\in\mathbb{C}^n
+},
+\qquad{\mathbf z}\in\mathbb{C}^n.
 $$
 
 
@@ -72,14 +70,12 @@ e^{-(x^2+y^2)}\,dx\,dy=
 It can be shown that ${\mathbb E}({\mathbf z}{\mathbf
 z}^\dag)=\Gamma$, so $\Gamma$ really is the variance of the
 distribution.  We can also introduce a nonzero mean, ${\mathbf
-m}\in{\mathbb C}^n$ in the natural way.
-
-The `cmvnorm` package furnishes some R functionality for dealing with
-the complex multivariate Gaussian distribution.
+m}\in{\mathbb C}^n$ in the natural way.  The `cmvnorm` package furnishes
+some R functionality for dealing with the complex multivariate Gaussian distribution.
 
 # The package in use
 
-The simplest case would be the univariate standard normal
+The simplest case would be the univariate standard complex normal
 distribution, that is is a complex random variable $z$ with PDF
 $\exp(z^*z)/\pi$.  Random samples are given by `rcnorm()`:
 
@@ -146,3 +142,6 @@ For further information, see the package vignette: type
 
 at the R command line.
 
+# References
+
+Hankin, R. K. S. 2015. "The complex multivariate Gaussian distribution". _The R Journal_, 7(1:73-80)
