@@ -144,4 +144,4 @@ at the R command line.
 
 # References
 
-Hankin, R. K. S. 2015. "The complex multivariate Gaussian distribution". _The R Journal_, 7(1:73-80)
+Hankin, R. K. S. 2015. "The complex multivariate Gaussian distribution". _The R Journal_, 7(1):73-80
