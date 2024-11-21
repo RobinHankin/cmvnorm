@@ -482,7 +482,7 @@ describe the severe constraint that analyticity represents.
 Here the Weierstrass~$\sigma$-function~\citep{chandrasekharan1985} is
 chosen as an example, on the grounds that~\cite{littlewood1948}
 consider it to be a typical entire function in a well-defined sense.
-The elliptic package~\citep{hankin2006} is used for numerical
+The \pkg{elliptic} package~\citep{hankin2006} is used for numerical
 evaluation.  The~$\sigma$-function takes a primary argument~$z$ and
 two invariants~$g_1,g_2$, so a three-column complex design matrix is
 required:
