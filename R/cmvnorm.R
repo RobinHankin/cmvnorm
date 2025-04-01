@@ -88,7 +88,7 @@ function (n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
   }
 
   out <- matrix(rcnorm(n*ncol(sigma)),ncol=n)
-  out <- Conj(crossprod(out,retval))
+  out <- crossprod(out,retval)
   out <- sweep(out, 2, mean, "+")
   colnames(out) <- names(mean)
   return(out)
