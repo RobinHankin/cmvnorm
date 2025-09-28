@@ -1,7 +1,26 @@
+#' @importFrom elliptic sigma
+
+#' @importFrom quadform cprod
+#' @importFrom quadform quad.form
+#' @importFrom quadform quad.form.inv
+#' @importFrom quadform quad.tform
+#' @importFrom quadform quad.tdiag
+
+#' @importFrom emulator regressor.basis
+#' @importFrom emulator regressor.multi
+#' @importFrom emulator betahat.fun
+#' @importFrom emulator sigmahatsquared
+
+#' @importFrom stats rnorm
+
+
+
+#' @export
 "rcnorm" <- function(n){
   sqrt(0.5)*(rnorm(n) + 1i*rnorm(n))
 }
 
+#' @export
 "dcmvnorm" <-
 function (z, mean, sigma, log = FALSE) 
 {
@@ -36,6 +55,7 @@ function (z, mean, sigma, log = FALSE)
     }
 }
 
+#' @export
 "isHermitian" <-
 function(x, tol= 100 * .Machine$double.eps){
   if(!isSymmetric(Re(x),tol=tol)){
@@ -49,6 +69,7 @@ function(x, tol= 100 * .Machine$double.eps){
   }
 }
 
+#' @export
 "ishpd" <-
 function(x,tol= 100 * .Machine$double.eps){ # "ishpd" == Is Hermitian Positive Definite
   if(isHermitian(x) && all(zapim(svd(x)$d)>0)){
@@ -58,6 +79,7 @@ function(x,tol= 100 * .Machine$double.eps){ # "ishpd" == Is Hermitian Positive D
   }
 }
 
+#' @export
 "rcmvnorm" <-
 function (n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)), 
           method = c("svd", "eigen", "chol"),
@@ -94,6 +116,7 @@ function (n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)),
   return(out)
 }
 
+#' @export
 "zapim" <-
 function(x,tol= 100 * .Machine$double.eps){
   jj <- abs(Im(x))<tol
@@ -105,6 +128,7 @@ function(x,tol= 100 * .Machine$double.eps){
   }
 }
 
+#' @export
 "Im<-" <-
 function (x, value) 
 {
@@ -119,6 +143,7 @@ function (x, value)
     }
 }
 
+#' @export
 "Re<-" <-
 function (x, value) 
 {
@@ -128,6 +153,7 @@ function (x, value)
     return((1i) * Im(x) + value)
 }
 
+#' @export
 "complex_CF" <- function(z1,z2,means,pos.def.matrix){
     exp(
         +0i
@@ -136,6 +162,7 @@ function (x, value)
         )
 }
 
+#' @export
 "corr_complex" <-
 function (z1, z2=NULL, distance.function = complex_CF, means=NULL, scales=NULL, pos.def.matrix=NULL){
     if(is.null(z2)){z2 <- z1}
@@ -164,6 +191,7 @@ function (z1, z2=NULL, distance.function = complex_CF, means=NULL, scales=NULL, 
     return(as.matrix(out))
 }
 
+#' @export
 "interpolant.quick.complex" <-
 function (x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL,  means=NULL,
     func = regressor.basis, give.Z = FALSE, distance.function = corr_complex, 
@@ -213,6 +241,8 @@ function (x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL,  means=NULL,
 }
 
 # links to scales.likelihood() of the emulator package:
+
+#' @export
 "scales.likelihood.complex" <-
 function(pos.def.matrix, scales, means,  zold, z,  give_log = TRUE, func = regressor.basis){
     if(missing(pos.def.matrix)){
@@ -242,22 +272,29 @@ function(pos.def.matrix, scales, means,  zold, z,  give_log = TRUE, func = regre
     }
 }
 
+#' @export
 "sd" <- function(x, na.rm = FALSE) {
   UseMethod("sd", x)  # thanks go to Kirill Mueller for advice
 }
 
+#' @export
 sd.complex <- function(x, na.rm = FALSE) {
     sqrt(drop(var(c(x),na.rm=na.rm)))
 }
 
 
+#' @export
 sd.default  <- stats::sd
+
+#' @export
 var.default <- stats::var
 
+#' @export
 "var" <- function(x,y=NULL,na.rm=FALSE,use){
     UseMethod("var",x)
 }
 
+#' @export
 "var.complex" <- function(x, y=NULL, na.rm = FALSE, use){
     if(na.rm){x <- x[!is.na(rowSums(x)),]}
     
@@ -273,6 +310,7 @@ var.default <- stats::var
     }
 }
 
+#' @export
 `rcwis` <- function(n,S){
     if(length(S)==1){S <- diag(nrow=S)}
     cprod(rcmvnorm(n,sigma=S))

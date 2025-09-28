@@ -1,3 +1,8 @@
+# cmvnorm 1.1-1
+
+- roxygenisation
+- bugfixes
+
 # cmvnorm 1.0-7
 
 - consistentification
