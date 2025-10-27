@@ -64,10 +64,7 @@ rcmvnorm(10,mean=c(0,1+10i),sigma=S)
 n <- 101
 z <- rcmvnorm(n,mean=c(0,1+10i),sigma=S)
 xbar <- colMeans(z)
-Sbar <- cprod(sweep(z,2,xbar))/n
-
-
-
+Sbar <- quadform::cprod(sweep(z,2,xbar))/n
 
 }
 \keyword{distribution}

@@ -181,6 +181,7 @@ function, analogous to \code{rmvnorm()}:
 <<use_rcmvnorm>>=
 set.seed(1)
 library("cmvnorm",quietly=TRUE)
+library("emulator",quietly=TRUE)
 cm <- c(1,1i)
 cv <- matrix(c(2,1i,-1i,2),2,2)
 (z <- rcmvnorm(6, mean=cm, sigma=cv))
