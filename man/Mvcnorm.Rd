@@ -15,7 +15,7 @@ rcnorm(n)
 dcmvnorm(z, mean, sigma, log = FALSE) 
 rcmvnorm(n, mean = rep(0, nrow(sigma)), sigma = diag(length(mean)), 
     method = c("svd", "eigen", "chol"),
-    tol= 100 * .Machine$double.eps)
+    tol = 100 * .Machine$double.eps)
 }
 \arguments{
   \item{z}{Complex vector or matrix of quantiles.  If a matrix, each row
@@ -51,20 +51,20 @@ N. R. Goodman 1963.  \dQuote{Statistical analysis based on a certain
 \author{Robin K. S. Hankin}
 \examples{
 
-S <- quadform::cprod(rcmvnorm(3,mean=c(1,1i),sigma=diag(2)))
+S <- quadform::cprod(rcmvnorm(3, mean=c(1,1i), sigma=diag(2)))
 
-rcmvnorm(10,sigma=S)
-rcmvnorm(10,mean=c(0,1+10i),sigma=S)
+rcmvnorm(10, sigma=S)
+rcmvnorm(10, mean=c(0,1+10i), sigma=S)
 
 
-# Now try and estimate the mean (viz 1,1i) and variance (S) from a
+# Now try and estimate the mean (viz 1, 1i) and variance (S) from a
 #  random sample:
 
 
 n <- 101
-z <- rcmvnorm(n,mean=c(0,1+10i),sigma=S)
+z <- rcmvnorm(n, mean=c(0,1+10i), sigma=S)
 xbar <- colMeans(z)
-Sbar <- quadform::cprod(sweep(z,2,xbar))/n
+Sbar <- quadform::cprod(sweep(z, 2, xbar))/n
 
 }
 \keyword{distribution}

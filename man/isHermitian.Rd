@@ -10,8 +10,8 @@ Returns \code{TRUE} if a matrix is Hermitian or Hermitian positive-definite
 }
 \usage{
 isHermitian(x, tol = 100 * .Machine$double.eps)
-ishpd(x,tol= 100 * .Machine$double.eps)
-zapim(x,tol= 100 * .Machine$double.eps)
+ishpd(x, tol = 100 * .Machine$double.eps)
+zapim(x, tol = 100 * .Machine$double.eps)
 }
 \arguments{
   \item{x}{A square matrix}
@@ -26,13 +26,11 @@ parts of a vector, returning real if all elements are so zapped.
 \author{Robin K. S. Hankin}
 \examples{
 v <- 2^(1:30)
-zapim(v+1i*exp(-v))
+zapim(v + 1i*exp(-v))
 
-
-ishpd(matrix(c(1,0.1i,-0.1i,1),2,2))   # should be TRUE
-isHermitian(matrix(c(1,3i,-3i,1),2,2)) # should be TRUE
-ishpd(rcwis(6,2))                      # should be TRUE
-
+ishpd(matrix(c(1, 0.1i, -0.1i, 1), 2, 2))   # should be TRUE
+isHermitian(matrix(c(1, 3i, -3i, 1), 2, 2)) # should be TRUE
+ishpd(rcwis(6, 2))                          # should be TRUE
 }
 
 \keyword{complex}

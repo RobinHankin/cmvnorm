@@ -30,12 +30,11 @@ observations (such as \code{runif()}) generally reserve argument
 }
 \examples{
 
+rcwis(10, 2)
+eigen(rcwis(7,3), TRUE, TRUE)   # all positive
+eigen(rcwis(3,7), TRUE, TRUE)   # 4 positive, 3 zero
 
-rcwis(10,2)
-eigen(rcwis(7,3),TRUE,TRUE)   # all positive
-eigen(rcwis(3,7),TRUE,TRUE)   # 4 positive, 3 zero
-
-rcwis(10,rcwis(10,3))
+rcwis(10, rcwis(10, 3))
 
 
 }

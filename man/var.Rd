@@ -44,5 +44,5 @@ for \eqn{n-1}).
 
 sd(rcnorm(10)) # imaginary component suppressed by zapim()
 
-var(rcmvnorm(1e5,mean=c(0,0)))
+var(rcmvnorm(1e5, mean=c(0,0)))
 }
