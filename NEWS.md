@@ -1,3 +1,7 @@
+# cmvnorm 1.1-2
+
+- typos
+
 # cmvnorm 1.1-1
 
 - roxygenisation

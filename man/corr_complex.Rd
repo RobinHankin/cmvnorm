@@ -10,7 +10,7 @@ Various utilities for investigating complex Gaussian processes
 \usage{
 corr_complex(z1, z2 = NULL, distance.function = complex_CF, means =
 NULL, scales = NULL, pos.def.matrix = NULL)
-complex_CF(z1,z2, means, pos.def.matrix)
+complex_CF(z1, z2, means, pos.def.matrix)
 scales.likelihood.complex(pos.def.matrix, scales, means,  zold, z,
                give_log = TRUE, func = regressor.basis)
 interpolant.quick.complex(x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL,
@@ -26,7 +26,7 @@ interpolant.quick.complex(x, d, zold, Ainv, scales = NULL, pos.def.matrix = NULL
     function is used to give the covariance matrix; \code{scales} is
     used to specify the diagonal of \code{pos.def.matrix} if the
     off-diagonal elements are zero}
-  \item{zold, d, give_log, func, x, Ainv, give.Z,...}{Direct analogues of the
+  \item{zold, d, give_log, func, x, Ainv, give.Z, ...}{Direct analogues of the
     arguments in \code{interpolant()} and \code{scales.likelihood()} in
     the \pkg{emulator} package}
 }
@@ -101,7 +101,7 @@ V <- emulator::latin.hypercube(7, 2, complex=TRUE)
 
 cm <- c(1, 1+1i)                     # "complex mean"
 cs <- matrix(c(2,1i,-1i,1), 2, 2)    # "complex scales"
-tb <- c(1,1i,1-1i)                   # "true beta"
+tb <- c(1, 1i, 1-1i)                 # "true beta"
 
 A <- corr_complex(V, means=cm, pos.def.matrix=cs)
 Ainv <- solve(A)
@@ -112,9 +112,7 @@ emulator::betahat.fun(V, Ainv, z)    # should be close to 'tb'
 
 #scales.likelihood.complex(cs, cm, V, z)   # log-likelihood evaluated true parameters
 
-
-
-interpolant.quick.complex(x=0.1i+V[1:3,],d=z,zold=V,Ainv=Ainv,pos.def.matrix=cs,means=cm)
+interpolant.quick.complex(x=0.1i+V[1:3,], d=z, zold=V, Ainv=Ainv, pos.def.matrix=cs, means=cm)
 
 
 }

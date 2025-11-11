@@ -143,10 +143,11 @@ generalization to the complex case, as long as ``transpose'' is
 replaced by ``Hermitian transpose''.  For example,
 $\bX\sim\norm{\bzero}{\Sigma}$ implies
 $B\bX\sim\norm{\bzero}{B^T\Sigma B}$ for any constant
-matrix~$B\in\mathbb{R}^{m\times n}$, and
+$B\bX\sim{\mathcal{N}_m}\left(\bzero,B^T\Sigma B\right)$ for any constant
+matrix~$B\in\mathbb{R}^{n\times m}$, and
 analogously $\bZ\sim\cnorm{\bzero}{\Gamma}$
-implies~$B\bZ\sim\cnorm{\bzero}{\herm{B}\Gamma B}$,
-$B\in\mathbb{C}^{m\times n}$.  Similar
+implies~$B\bZ\sim\mathcal{N}\mathcal{C}_m\left(\bzero,\herm{B}\Gamma B\right)$,
+$B\in\mathbb{C}^{n\times m}$.  Similar
 generalizations operate for Schur complement methods on partitioned
 matrices.
 
