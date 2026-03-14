@@ -95,7 +95,7 @@ More details are given in the package vignette.
 \examples{
 
 
-complex_CF(c(1,1i),c(1,-1i), means=c(1i,1i), pos.def.matrix=diag(2))
+complex_CF(c(1,1i), c(1,-1i), means=c(1i,1i), pos.def.matrix=diag(2))
 
 V <- emulator::latin.hypercube(7, 2, complex=TRUE)
 
@@ -113,7 +113,6 @@ emulator::betahat.fun(V, Ainv, z)    # should be close to 'tb'
 #scales.likelihood.complex(cs, cm, V, z)   # log-likelihood evaluated true parameters
 
 interpolant.quick.complex(x=0.1i+V[1:3,], d=z, zold=V, Ainv=Ainv, pos.def.matrix=cs, means=cm)
-
 
 }
 
