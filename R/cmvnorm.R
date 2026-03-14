@@ -58,7 +58,7 @@ function (z, mean, sigma, log = FALSE)
 #' @export
 "isHermitian" <-
 function(x, tol= 100 * .Machine$double.eps){
-  if(!isSymmetric(Re(x),tol=tol)){
+  if(!isSymmetric(Re(x), tol=tol)){
     return(FALSE)
   }
   x <- Im(x)
