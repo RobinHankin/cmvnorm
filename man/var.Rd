@@ -5,9 +5,7 @@
 \alias{sd.default}
 \alias{var.complex}
 \alias{var.default}
-\title{
-Variance and standard deviation of complex vectors
-}
+\title{Variance and standard deviation of complex vectors}
 \description{
 Complex generalizations of \code{stats::sd()} and \code{stats::var()}
 }
